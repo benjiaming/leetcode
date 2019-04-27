@@ -24,6 +24,8 @@ class Solution(object):
         """
         :type strs: List[str]
         :rtype: str
+
+        Runs in O(S) where S is the sum of all characters in all strings.
         """
         prefix = ''
         if not strs:
