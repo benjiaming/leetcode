@@ -29,7 +29,7 @@ Note:
     Every nums[i] will be an integer in the range [0, 99].
 """
 class Solution(object):
-    def dominantIndex_slow(self, nums):
+    def dominantIndex(self, nums):
         """
         :type nums: List[int]
         :rtype: int
