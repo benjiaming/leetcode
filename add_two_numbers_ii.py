@@ -16,15 +16,31 @@ Output: [1,2]
 Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 """
 class Solution(object):
-    def twoSum(self, numbers, target):
+    def twoSumDict(self, numbers, target):
         """
         :type numbers: List[int]
         :type target: int
         :rtype: List[int]
+
+        Uses a dictionary; runs in O(n)
         """
+        seen = {}
         for i, num in enumerate(numbers):
-            for j in range(i+1, len(numbers)):
-                if num + numbers[j] == target:
-                    return [i+1, j+1]
+            if num in seen:
+                return [seen[num]+1, i+1]
+            seen[target-num] = i
         return []
-    
+
+    def twoSumCmp(self, numbers, target):
+        # two pointer technique
+        i = 0
+        j = len(numbers) - 1
+        while i < j:
+            result = cmp(numbers[i], target - numbers[j])
+            if result < 0:
+                i += 1
+            elif result > 0:
+                j-= 1
+            else:
+                return [i+1, j+1]
+        return []
