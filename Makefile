@@ -8,6 +8,7 @@ ifndef PIP_VERSION
 endif
 	echo $(PATH)
 	find ~/.local
+	ls -l ~/.local/bin/pip
 	pip install --user virtualenv
 	virtualenv venv
 	. venv/bin/activate
