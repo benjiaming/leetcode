@@ -5,7 +5,9 @@ all: clean
 ifndef PIP_VERSION
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python get-pip.py --user
+	find ~ -name pip
 endif
+	echo "PATH is $(PATH)"
 	pip install --user virtualenv
 	virtualenv venv
 	. venv/bin/activate
