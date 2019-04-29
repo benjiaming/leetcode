@@ -4,6 +4,7 @@ all: clean
 ifndef PIP_VERSION
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python get-pip.py --user
+	export PATH=$PATH:$HOME/.local/bin/
 endif
 	pip install --user virtualenv
 	virtualenv venv
