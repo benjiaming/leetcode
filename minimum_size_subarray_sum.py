@@ -21,7 +21,6 @@ class Solution(object):
 
         Runs in O(n). O(1) for space.
         """
-        n = len(nums)
         left = 0
         total = 0
         ans = sys.maxint
