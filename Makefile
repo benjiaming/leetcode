@@ -6,6 +6,8 @@ ifndef PIP_VERSION
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python get-pip.py --user
 endif
+	echo $(PATH)
+	ls -l ~/.local/bin/
 	pip install --user virtualenv
 	virtualenv venv
 	. venv/bin/activate
