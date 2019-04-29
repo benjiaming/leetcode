@@ -10,7 +10,7 @@ ifndef PIP_VERSION
 	$(LOCAL_PIP) install --user virtualenv
 	$(LOCAL_VIRTUALENV) venv
 	. venv/bin/activate
-	$(LOCAL_PIP) install -r requirements.txt
+	$(LOCAL_PIP) install -r requirements.txt --user
 endif
 	pip install --user virtualenv
 	virtualenv venv
