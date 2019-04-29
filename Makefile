@@ -24,4 +24,4 @@ clean:
 	@rm -rf venv
 
 test:
-	pytest
+	$(PYTEST)
