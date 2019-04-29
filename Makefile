@@ -10,13 +10,13 @@ VIRTUALENV := $(LOCAL_PATH)/virtualenv
 PYTEST := $(LOCAL_PATH)/pytest
 endif
 
-all: clean circleci
+all: clean bootstrap
 	$(PIP) install --user virtualenv
 	$(VIRTUALENV) venv
 	. venv/bin/activate
 	$(PIP) install --user -r requirements.txt
 
-circleci:
+bootstrap:
 ifndef PIP_VERSION
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python get-pip.py --user
