@@ -8,10 +8,10 @@ ifndef PIP_VERSION
 	find ~ -name pip
 endif
 	echo "PATH is $(PATH)"
-	pip install --user virtualenv
+	~/.local/bin/pip install --user virtualenv
 	virtualenv venv
 	. venv/bin/activate
-	pip install -r requirements.txt
+	~/.local/bin/pip install -r requirements.txt
 
 clean:
 	@rm -rf venv
