@@ -1,10 +1,10 @@
 PIP_VERSION := $(shell pip --version 2>/dev/null)
 LOCAL_PIP := ~/.local/bin/pip
 LOCAL_VIRTUALENV := ~/.local/bin/virtualenv
-
+LOCAL_PYTEST := ~/.local/bin/pytest
 
 all: clean
-# TODO: refactor
+# TODO: refactor with PATH
 ifndef PIP_VERSION
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python get-pip.py --user
@@ -23,4 +23,8 @@ clean:
 	@rm -rf venv
 
 test:
+ifndef PIP_VERSION
+	$(LOCAL_PYTEST)
+else
 	pytest
+endif
