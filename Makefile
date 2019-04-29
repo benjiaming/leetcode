@@ -16,4 +16,3 @@ clean:
 
 test:
 	pytest
-endif
