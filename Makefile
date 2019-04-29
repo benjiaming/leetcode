@@ -18,8 +18,7 @@ endif
 	$(PIP) install --user virtualenv
 	$(VIRTUALENV) venv
 	. venv/bin/activate
-	$(PIP) install -r requirements.txt
-
+	$(PIP) install --user -r requirements.txt
 
 clean:
 	@rm -rf venv
