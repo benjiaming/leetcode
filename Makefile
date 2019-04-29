@@ -1,9 +1,10 @@
 PIP_VERSION := $(shell pip --version 2>/dev/null)
+# PATH := $(PATH):~/.local/bin
 
 all: clean
 ifndef PIP_VERSION
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-	sudo python get-pip.py --user
+	sudo python get-pip.py
 endif
 	pip install --user virtualenv
 	virtualenv venv
