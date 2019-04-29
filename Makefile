@@ -7,7 +7,7 @@ ifndef PIP_VERSION
 	python get-pip.py --user
 endif
 	echo $(PATH)
-	tree
+	find .
 	pip install --user virtualenv
 	virtualenv venv
 	. venv/bin/activate
