@@ -4,6 +4,7 @@ LOCAL_VIRTUALENV := ~/.local/bin/virtualenv
 
 
 all: clean
+# TODO: refactor
 ifndef PIP_VERSION
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python get-pip.py --user
@@ -11,11 +12,12 @@ ifndef PIP_VERSION
 	$(LOCAL_VIRTUALENV) venv
 	. venv/bin/activate
 	$(LOCAL_PIP) install -r requirements.txt --user
-endif
+else
 	pip install --user virtualenv
 	virtualenv venv
 	. venv/bin/activate
 	pip install -r requirements.txt
+endif
 
 clean:
 	@rm -rf venv
