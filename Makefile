@@ -1,17 +1,21 @@
 PIP_VERSION := $(shell pip --version 2>/dev/null)
-PATH := $(PATH):~/.local/bin/
+LOCAL_PIP := ~/.local/bin/pip
+LOCAL_VIRTUALENV := ~/.local/bin/virtualenv
+
 
 all: clean
 ifndef PIP_VERSION
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python get-pip.py --user
-	find ~ -name pip
+	$(LOCAL_PIP) install --user virtualenv
+	$(LOCAL_VIRTUALENV) venv
+	. venv/bin/activate
+	$(LOCAL_PIP) install -r requirements.txt
 endif
-	echo "PATH is $(PATH)"
-	~/.local/bin/pip install --user virtualenv
+	pip install --user virtualenv
 	virtualenv venv
 	. venv/bin/activate
-	~/.local/bin/pip install -r requirements.txt
+	pip install -r requirements.txt
 
 clean:
 	@rm -rf venv
