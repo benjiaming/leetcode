@@ -40,11 +40,48 @@ class Solution(object):
         :type nums: List[int]
         :type k: int
         :rtype: None Do not return anything, modify nums in-place instead.
+
+        Reverses the whole list and then again first k and last n-k numbers.
+
         Runs in O(n). Space complexity: O(1)
+        (64 ms 12.1 MB)
+        """
+        len_nums = len(nums)
+        if not len_nums:
+            return []
+        k %= len_nums
+        self.reverse_range(nums, 0, len_nums-1)
+        self.reverse_range(nums, 0, k-1)
+        self.reverse_range(nums, k, len_nums-1)
+
+    def rotate_swap(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: None Do not return anything, modify nums in-place instead.
+
+        Swaps using temporary variables.
+
+        Runs in O(n). Space complexity: O(1)
+        (52 ms 11.9 MB)
         """
         if not nums:
             return []
-        k %= len(nums)
-        self.reverse_range(nums, 0, len(nums)-1)
-        self.reverse_range(nums, 0, k-1)
-        self.reverse_range(nums, k, len(nums)-1)
+        len_num = len(nums)
+        k %= len_num
+        count = 0
+        start = -1
+        while count < len_num:
+            start += 1
+            current = start
+            prev = nums[start]
+            while True:
+                next = (current + k) % len_num
+                temp = nums[next]
+                nums[next] = prev
+                prev = temp
+                current = next
+                count += 1
+                if start == current:
+                    break
+

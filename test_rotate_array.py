@@ -56,5 +56,47 @@ class TestSolution(unittest.TestCase):
         solution.rotate(numbers, 1000)
         self.assertEqual(numbers, [3,1,2])
 
+    def test_rotate_swap_array(self):
+        solution = Solution()
+        numbers = []
+        solution.rotate_swap(numbers, 1)
+        self.assertEqual(numbers, [])
+
+        numbers = [2]
+        solution.rotate_swap(numbers, 1)
+        self.assertEqual(numbers, [2])
+
+        numbers = [1, 2]
+        solution.rotate_swap(numbers, 0)
+        self.assertEqual(numbers, [1, 2])
+
+        numbers = [1, 2]
+        solution.rotate_swap(numbers, 1)
+        self.assertEqual(numbers, [2, 1])
+
+        numbers = [1, 2]
+        solution.rotate_swap(numbers, 2)
+        self.assertEqual(numbers, [1, 2])
+
+        numbers = [1, 2, 3]
+        solution.rotate_swap(numbers, 1)
+        self.assertEqual(numbers, [3, 1, 2])
+
+        numbers = [1,2,3,4,5,6,7]
+        solution.rotate_swap(numbers, 3)
+        self.assertEqual(numbers, [5,6,7,1,2,3,4])
+
+        numbers = [-1,-100,3,99]
+        solution.rotate_swap(numbers, 2)
+        self.assertEqual(numbers, [3,99,-1,-100])
+
+        numbers = [1,2,3]
+        solution.rotate_swap(numbers, 6)
+        self.assertEqual(numbers, [1,2,3])
+
+        numbers = [1,2,3]
+        solution.rotate_swap(numbers, 1000)
+        self.assertEqual(numbers, [3,1,2])
+
 if __name__ == '__main__':
     unittest.main()
