@@ -26,4 +26,5 @@ clean:
 	@rm -rf venv
 
 test:
-	$(PYTEST)
+	mkdir -p test-reports/
+	$(PYTEST) --junitxml=test-reports/junit.xml
