@@ -30,6 +30,8 @@ class Solution(object):
         :type C: List[int]
         :type D: List[int]
         :rtype: int
+
+        Runs in O(n^2)
         """
         count = Counter(a+b for a in A for b in B)
         return sum(count[-c-d] for c in C for d in D)
