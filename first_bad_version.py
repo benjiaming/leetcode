@@ -32,6 +32,7 @@ class Solution(object):
         """
         :type n: int
         :rtype: int
+        Runs in O(log n). Space complexity: O(1)
         """
         left = 0
         right = n
