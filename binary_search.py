@@ -37,6 +37,7 @@ class Solution(object):
         left = 0
         right = len(nums) - 1
         while left <= right:
+            # https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html
             middle = left + (right - left) // 2
             if target > nums[middle]:
                 left = middle + 1
