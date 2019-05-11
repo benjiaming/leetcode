@@ -103,5 +103,5 @@ input = [
   [".",".",".","4","1","9",".",".","5"],
   [".",".",".",".","8",".",".","7","9"]
         ]        
-print solution.isValidSudoku(input)
-print solution.check_board(['.','.','.','.','.','.','.','.','.'])
+print(solution.isValidSudoku(input))
+print(solution.check_board(['.','.','.','.','.','.','.','.','.']))
