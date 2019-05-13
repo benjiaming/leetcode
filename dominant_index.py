@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 In a given integer array nums, there is always exactly one largest element.
 

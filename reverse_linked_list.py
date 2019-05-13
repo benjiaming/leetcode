@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Reverse a singly linked list.
 

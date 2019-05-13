@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Design a HashSet without using any built-in hash table libraries.
 

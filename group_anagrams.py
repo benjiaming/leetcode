@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Given an array of strings, group anagrams together.
 

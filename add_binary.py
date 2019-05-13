@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Given two binary strings, return their sum (also a binary string).
 

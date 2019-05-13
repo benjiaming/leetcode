@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Given an array, rotate the array to the right by k steps, where k is non-negative.
 

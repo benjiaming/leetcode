@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Given a binary tree, find its maximum depth.
 

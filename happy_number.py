@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Write an algorithm to determine if a number is "happy".
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 We are playing the Guess Game. The game is as follows:
 
