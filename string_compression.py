@@ -24,6 +24,8 @@ Explanation:
 "aa" is replaced by "a2". "bb" is replaced by "b2". "ccc" is replaced by "c3".
 """
 #%%
+from collections import Counter
+
 class Solution(object):
     def compress(self, chars):
         i, j, index, count = 0, 0, 0, 0
@@ -43,6 +45,32 @@ class Solution(object):
             count = 0
         return j    
 
+    def compress2(self, chars):
+        """
+        Modification from CrackingTheCodingInterview.com
+
+        aabbccccaa => a2b1c5a3
+        """
+
+        if len(chars) < 2:
+            return chars
+        output = ''
+        prev_char = chars[0]
+        prev_char_count = 1
+        for i in range(1, len(chars)):
+            if chars[i] == prev_char:
+                prev_char_count += 1
+            else:
+                output += prev_char
+                output += str(prev_char_count)
+                prev_char = chars[i]
+                prev_char_count = 1
+        output += prev_char
+        output += str(prev_char_count)
+        return output
+
+
+
 solution = Solution()
 input = ["a","a","b","b","c","c","c"]
 print(solution.compress(input))
@@ -56,8 +84,11 @@ print(input)
 input = ["a","b", "c","d","e"]
 print(solution.compress(input))
 print(input)
+input = ["a"]
+print(solution.compress(input))
 
-# #%%
+print(solution.compress2('aabbccc'))
+
 
 
 #%%
