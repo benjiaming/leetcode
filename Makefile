@@ -10,17 +10,11 @@ VIRTUALENV := $(LOCAL_PATH)/virtualenv
 PYTEST := $(LOCAL_PATH)/pytest
 endif
 
-all: clean bootstrap
+all: clean
 	$(PIP) install --user virtualenv
 	$(VIRTUALENV) venv
 	. venv/bin/activate
 	$(PIP) install --user -r requirements.txt
-
-bootstrap:
-ifndef PIP_VERSION
-	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-	python get-pip.py --user
-endif
 
 clean:
 	@rm -rf venv

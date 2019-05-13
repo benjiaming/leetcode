@@ -71,7 +71,7 @@ class Solution(object):
 
 solution = Solution()
 print(solution.isOneAway('a', 'bb'))
-print(solution.isOneAway('pale', 'ple'))
+print(solution.isOneAway('pale', 'bale'))
 print(solution.isOneAway('ple', 'pale'))
 print(solution.isOneAway('ple', 'pales'))
 print(solution.isOneAway('ple', 'plles'))
