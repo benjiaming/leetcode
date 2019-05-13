@@ -19,7 +19,7 @@ Example 3:
 Input: "carerac"
 Output: true
 
-Modification from CrackingTheCodeInterview.com
+Modification from CrackingTheCodeInterview.com: Tact Coa == True
 """
 #%%
 from collections import Counter
