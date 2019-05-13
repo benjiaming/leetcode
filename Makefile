@@ -1,22 +1,16 @@
-PIP_VERSION := $(shell pip --version 2>/dev/null)
-ifdef PIP_VERSION
 PIP := pip
-VIRTUALENV := virtualenv
-PYTEST := pytest
-else
-LOCAL_PATH := ~/.local/bin
-PIP := . venv/bin/activate && pip
-VIRTUALENV := $(LOCAL_PATH)/virtualenv
-PYTEST := $(LOCAL_PATH)/pytest
-endif
+VIRTUALENV := python3 -m venv
+PYTEST := venv/bin/pytest
 
-all: clean
-	$(PIP) install --user virtualenv
-	$(VIRTUALENV) venv
-	$(PIP) install --user -r requirements.txt
+all: clean venv
 
 clean:
 	@rm -rf venv
+
+venv:
+	$(VIRTUALENV) venv
+	source venv/bin/activate && $(PIP) install -r requirements.txt
+
 
 test:
 	. venv/bin/activate
