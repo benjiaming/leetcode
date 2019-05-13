@@ -6,10 +6,10 @@ class TestSolution(unittest.TestCase):
         hashmap = MyHashMap()
         hashmap.put(1, 1)
         hashmap.put(2, 2)
-        self.assertEquals(hashmap.get(1), 1)
+        self.assertEqual(hashmap.get(1), 1)
         self.assertEqual(hashmap.get(3), -1) # not found
         hashmap.put(2, 1)
-        self.assertEquals(hashmap.get(2), 1) # update the existing value
+        self.assertEqual(hashmap.get(2), 1) # update the existing value
         hashmap.remove(2)
         self.assertEqual(hashmap.get(2), -1)
 
