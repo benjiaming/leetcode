@@ -37,7 +37,7 @@ class Solution(object):
         left = 0
         right = n
         while left < right:
-            middle = left + (right - left) / 2
+            middle = left + (right - left) // 2
             is_bad = isBadVersion(middle)
             if is_bad:
                 right = middle

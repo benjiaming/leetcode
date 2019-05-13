@@ -11,7 +11,8 @@ Explanation: the subarray [4,3] has the minimal length under the problem constra
 Follow up:
 If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log n). 
 """
-import sys
+MAXINT=2147483647
+
 class Solution(object):
     def minSubArrayLen(self, s, nums):
         """
@@ -23,12 +24,12 @@ class Solution(object):
         """
         left = 0
         total = 0
-        ans = sys.maxint
+        ans = MAXINT
         for i, num in enumerate(nums):
             total += num
             while total >= s:
                 ans = min(ans, i + 1 - left)
                 total -= nums[left]
                 left += 1
-        return 0 if ans == sys.maxint else ans
+        return 0 if ans == MAXINT else ans
 
