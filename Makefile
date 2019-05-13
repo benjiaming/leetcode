@@ -5,7 +5,7 @@ VIRTUALENV := virtualenv
 PYTEST := pytest
 else
 LOCAL_PATH := ~/.local/bin
-PIP := $(LOCAL_PATH)/pip
+PIP := . venv/bin/activate && pip
 VIRTUALENV := $(LOCAL_PATH)/virtualenv
 PYTEST := $(LOCAL_PATH)/pytest
 endif
@@ -13,12 +13,12 @@ endif
 all: clean
 	$(PIP) install --user virtualenv
 	$(VIRTUALENV) venv
-	. venv/bin/activate
 	$(PIP) install --user -r requirements.txt
 
 clean:
 	@rm -rf venv
 
 test:
+	. venv/bin/activate
 	mkdir -p test-reports/
 	$(PYTEST) --junitxml=test-reports/junit.xml
