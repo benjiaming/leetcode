@@ -35,5 +35,5 @@ class Solution(object):
         return False
         
 solution = Solution()
-print solution.containsNearbyDuplicate([1,2,3,1], 3)
-print solution.containsNearbyDuplicate([1,2,3,1,2,3], 2)
+print(solution.containsNearbyDuplicate([1,2,3,1], 3))
+print(solution.containsNearbyDuplicate([1,2,3,1,2,3], 2))

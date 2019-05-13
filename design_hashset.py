@@ -60,7 +60,6 @@ class MyHashSet(object):
         if not self.contains(key):
             return
         bucket = self.get_bucket(key)
-        print bucket
         bucket.pop(bucket.index(key))
         
 

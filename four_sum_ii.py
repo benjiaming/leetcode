@@ -37,7 +37,7 @@ class Solution(object):
         return sum(count[-c-d] for c in C for d in D)
 
 solution = Solution()
-print solution.fourSumCount([1,2,3,4], [2,3,4,5], [2,3,4,5],[-8,3,4,2])
+print(solution.fourSumCount([1,2,3,4], [2,3,4,5], [2,3,4,5],[-8,3,4,2]))
 
 
 
