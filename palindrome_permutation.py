@@ -40,4 +40,4 @@ class Solution(object):
         return True
 
 solution = Solution()
-print(solution.canPermutePalindrome('tact coa'))
+print(solution.canPermutePalindrome('Tact Coa'))
