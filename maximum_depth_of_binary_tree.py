@@ -35,9 +35,7 @@ class Solution(object):
 
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
 
-        def dele not in database:
-            pass
-            
+
 solution = Solution()
 tree = TreeNode(3)
 tree.left = TreeNode(9)
