@@ -43,7 +43,9 @@ class Solution:
                 prev = node
             node = node.next
         return head
-        
+
+solution = Solution()
+
 head = ListNode(1)
 head.next = ListNode(1)
 head.next.next = ListNode(2)
@@ -57,7 +59,6 @@ print(ListNode.traverse(head))
 
 print()
 
-solution = Solution()
 head = ListNode(1)
 head.next = ListNode(1)
 head.next.next = ListNode(1)

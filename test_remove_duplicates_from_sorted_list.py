@@ -24,7 +24,6 @@ class TestSolution(unittest.TestCase):
         before = ListNode.traverse(head)
         self.assertEqual(before, '1->1->2->3->3')
 
-        solution = Solution()
         solution.deleteDuplicates(head)
         after = ListNode.traverse(head)
         self.assertEqual(after, '1->2->3')
@@ -38,7 +37,6 @@ class TestSolution(unittest.TestCase):
         before = ListNode.traverse(head)
         self.assertEqual(before, '1->1->1->1->1')
 
-        solution = Solution()
         solution.deleteDuplicates(head)
         after = ListNode.traverse(head)
         self.assertEqual(after, '1')
