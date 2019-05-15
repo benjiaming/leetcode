@@ -25,6 +25,7 @@ from list_node import ListNode
 
 class Solution:
     def middleNode(self, head: ListNode) -> ListNode:
+        # Runs in O(N) where N is number of nodes in head. Space complexity O(1)
         slow_node = head
         fast_node = head
         while fast_node and fast_node.next:
