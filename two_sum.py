@@ -21,11 +21,11 @@ class Solution(object):
         :rtype: List[int]
         """
         storage = {}
-        for i in range(len(nums)):
-            index = storage.get(target - nums[i], None)
+        for i, n in enumerate(nums):
+            index = storage.get(target - n, None)
             if index is not None and index != i:
                 return [index, i]
-            storage[nums[i]] = i
+            storage[n] = i
 
         return []
     

@@ -37,16 +37,16 @@ class Solution(object):
     def isListSorted(self, nums):
         if len(nums) < 2:
             return True
-        for i in range(1, len(nums)):
-            if nums[i] < nums[i-1]:
+        for i, n in enumerate(nums, 1):
+            if n < nums[i-1]:
                 return False
         return True
 
     def listHasDups(self, nums):
         if len(nums) <= 1:
             return False
-        for j in range(1, len(nums)):
-            if nums[j] == nums[j-1]:
+        for j, n in enumerate(nums, 1):
+            if n == nums[j-1]:
                 return True
         return False
 
@@ -77,8 +77,8 @@ class Solution(object):
                 return False
             prev_row = row
         prev_len = len(words[0])
-        for w in range(1, len(words)):
-            if len(words[w]) < prev_len:
+        for i, w in enumerate(words, 1):
+            if len(w) < prev_len:
                 return False
         return True
 

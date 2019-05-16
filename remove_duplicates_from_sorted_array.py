@@ -45,9 +45,9 @@ class Solution(object):
         if not nums:
             return 0
         i = 0
-        for j in range(1, len(nums)):
-            if nums[i] != nums[j]:
+        for j, n in enumerate(nums, 1):
+            if nums[i] != n:
                 i += 1
-                nums[i] = nums[j]
+                nums[i] = n
         return i + 1
 

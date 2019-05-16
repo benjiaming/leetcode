@@ -33,14 +33,13 @@ class Solution(object):
         
         min_price = prices[0]
         best_price = prices[1] - prices[0]
-        for i in range(1, len(prices)):
+        for i, n in enumerate(prices, 1):
             min_price = min(prices[i-1], min_price)
-            diff_curr_min = prices[i] - min_price
+            diff_curr_min = n - min_price
             best_price = max(best_price, diff_curr_min)
         if best_price < 0:
             return 0
         return best_price
-
 
 solution = Solution()
 print(solution.maxProfit([4,5,1,7,2,8]))

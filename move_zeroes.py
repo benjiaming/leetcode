@@ -20,9 +20,9 @@ class Solution(object):
         Runs in O(n). Space complexity is 0(1)
         """
         last_non_zero = 0
-        for i in range(len(nums)):
-            if nums[i] != 0:
-                nums[last_non_zero] = nums[i]
+        for n in nums:
+            if n != 0:
+                nums[last_non_zero] = n
                 last_non_zero += 1
         nums[last_non_zero:] = [0 for _ in range(last_non_zero, len(nums))]
 

@@ -43,12 +43,12 @@ class Solution(object):
         self.left_sum = 0
         self.right_sum = sum(nums)
 
-        for index in range(len(nums)): # this was a little bit faster than enumerate(nums)
-            self.right_sum -= nums[index]
+        for index, n in enumerate(nums):
+            self.right_sum -= n
             if self.left_sum == self.right_sum:
                 return index
 
-            self.left_sum += nums[index]
+            self.left_sum += n
 
         return -1
     
