@@ -4,11 +4,9 @@ class ListNode:
     def __init__(self, val=None):
         self.next = None
         if type(val) == list:
-            if len(val) > 0:
-                self.val = val.pop(0)
+            self.val = val.pop(0)
+            if len(val):
                 self.next = ListNode(val)
-            else:
-                self.val = None
         else:
             self.val = val
 
