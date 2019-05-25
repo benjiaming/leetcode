@@ -18,6 +18,7 @@ Input: ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
 
 """
+from functools import reduce
 class Solution(object):
     def reverseString(self, s):
         """
@@ -30,10 +31,15 @@ class Solution(object):
         i = 0
         j = len(s) - 1
         while i < j:
-            a = s[j]
-            s[j] = s[i]
-            s[i] = a
+            s[j], s[i] = s[i], s[j]
             i += 1
             j -= 1
 
+
+    def reverseReduce(self, s):
+        """
+        :type s: List[str]
+        :rtype: str Reversed string
+        """
+        return list(reduce(lambda x,y: y+x, s))
 

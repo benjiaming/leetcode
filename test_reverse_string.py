@@ -21,6 +21,9 @@ class TestSolution(unittest.TestCase):
         solution.reverseString(string)
         self.assertEqual(string, ['a'])
 
+    def test_reverse_reduce(self):
+        solution = Solution()
+        self.assertEqual(solution.reverseReduce(['a','b','c']), ['c','b','a'])
 
 if __name__ == '__main__':
     unittest.main()
